@@ -11,7 +11,12 @@ int main(){
   }
     // si devuelve 0 es hijo
   else if (p==0){
-    printf("hola soy el hijo\n");
+    for (int i = 1; i<= 4000000; i++){
+      printf("%d\n", i);
+      if (i % 10000 == 0){
+        usleep(3000);
+        }
+    }
     exit(0);
     }
     // si no es un valor 0 es padre
