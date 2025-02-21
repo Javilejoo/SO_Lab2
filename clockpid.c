@@ -17,18 +17,24 @@ int main() {
             pid3 = fork();  
 
             if (pid3 == 0) {  // Proceso bisnieto
-                for (long i = 0; i < 1000000; i++);
+                for (long i = 0; i < 1000000; i++) {
+                    printf("Bisnieto PID %d, i = %ld\n", getpid(), i);
+                }
                 printf("Bisnieto PID %d ha terminado\n", getpid());
                 return 0;
             }
             
-            for (long i = 0; i < 1000000; i++);
+            for (long i = 0; i < 1000000; i++) {
+                printf("Nieto PID %d, i = %ld\n", getpid(), i);
+            }
             wait(NULL); // Esperar al bisnieto
             printf("Nieto PID %d ha terminado\n", getpid());
             return 0;
         }
         
-        for (long i = 0; i < 1000000; i++);
+        for (long i = 0; i < 1000000; i++) {
+            printf("Hijo PID %d, i = %ld\n", getpid(), i);
+        }
         wait(NULL); // Esperar al nieto
         printf("Hijo PID %d ha terminado\n", getpid());
         return 0;

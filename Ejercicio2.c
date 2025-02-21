@@ -6,14 +6,17 @@ int main(){
   
   loop1 = clock();
   for (int i=0; i<1000001;i++){
+    printf("%d\n", i);
   }
   for (int i=0; i<1000001;i++){
+    printf("%d\n", i);
   }
   for (int i=0; i<1000001;i++){
+    printf("%d\n", i);
   }
   loop2 = clock();
   
-  double duration = (double)(loop1-loop2);
+  double duration = (double)(loop2-loop1);
   printf("%f",duration/CLOCKS_PER_SEC);
   
   
